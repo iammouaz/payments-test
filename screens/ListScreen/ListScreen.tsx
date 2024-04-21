@@ -10,10 +10,29 @@ const ListScreen: React.FC = () => {
 
   return (
     <View style={styles.container}>
+      <FlatList
+        data={notCompletedTodos}
+        renderItem={({ item }) => (
+          <View style={styles.teskRow}>
+            <Checkbox value={item.completed} onValueChange={() => handleToggleTodo(item.id)} />
+            <Text style={styles.taskText}>{item.text}</Text>
+          </View>
+        )}
+        keyExtractor={(item) => item.id.toString()}
+      />
+      <FlatList
+        data={completedTodos}
+        renderItem={({ item }) => (
+          <View style={styles.teskRow}>
+            <Checkbox value={item.completed} onValueChange={() => handleToggleTodo(item.id)} />
+            <Text style={styles.taskText}>{item.text}</Text>
+          </View>
+        )}
+        keyExtractor={(item) => item.id.toString()}
+        ListHeaderComponent={<Text style={styles.sectionHeader}>Completed</Text>}
+      />
 
-
-
-      <TouchableOpacity style={styles.floatingButton}>
+      <TouchableOpacity style={styles.floatingButton} onPress={handleAddButtonPress}>
         <Text style={styles.plusSign}>+</Text>
       </TouchableOpacity>
     </View>
