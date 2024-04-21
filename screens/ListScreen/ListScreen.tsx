@@ -1,12 +1,11 @@
-import React from "react";
-import { View, Text, FlatList, TouchableOpacity, StyleSheet } from "react-native";
-import Checkbox from "expo-checkbox";
-import { useListScreenLogic } from "./useListScreenLogic";
+import React from 'react'
+import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native'
+import Checkbox from 'expo-checkbox'
+import { useListScreenLogic } from './useListScreenLogic'
 
 const ListScreen: React.FC = () => {
   const { completedTodos, handleAddButtonPress, handleToggleTodo, notCompletedTodos } =
-    useListScreenLogic();
-
+    useListScreenLogic()
 
   return (
     <View style={styles.container}>
@@ -36,45 +35,45 @@ const ListScreen: React.FC = () => {
         <Text style={styles.plusSign}>+</Text>
       </TouchableOpacity>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ffffff",
+    backgroundColor: '#ffffff',
     padding: 30,
   },
   sectionHeader: {
     fontSize: 26,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     paddingVertical: 8,
     paddingHorizontal: 12,
-    color: "#3c87eb",
+    color: '#3c87eb',
   },
   floatingButton: {
-    position: "absolute",
+    position: 'absolute',
     bottom: 20,
     right: 20,
     width: 50,
     height: 50,
     borderRadius: 25,
-    backgroundColor: "#3c87eb",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: '#3c87eb',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   plusSign: {
     fontSize: 24,
-    color: "#ffffff",
+    color: '#ffffff',
   },
   taskText: {
-    color: "#3c87eb",
+    color: '#3c87eb',
   },
   teskRow: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     gap: 3,
   },
-});
+})
 
-export default ListScreen;
+export default ListScreen
