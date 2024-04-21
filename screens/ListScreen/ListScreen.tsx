@@ -1,8 +1,11 @@
 import React from "react";
 import { View, Text, FlatList, TouchableOpacity, StyleSheet } from "react-native";
 import Checkbox from "expo-checkbox";
+import { useListScreenLogic } from "./useListScreenLogic";
 
 const ListScreen: React.FC = () => {
+  const { completedTodos, handleAddButtonPress, handleToggleTodo, notCompletedTodos } =
+    useListScreenLogic();
 
 
   return (
